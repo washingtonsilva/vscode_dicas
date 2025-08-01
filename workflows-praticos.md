@@ -2,20 +2,20 @@
 
 *Guias passo-a-passo para colocar a teoria em prática*
 
-## 📖 Como usar este guia
+## Como usar este guia
 
 Este arquivo contém **workflows completos** para você começar a usar o VS Code imediatamente. Cada seção é um **passo-a-passo real** que você pode seguir.
 
-> **💡 Ordem recomendada:**
-> 1. 🚀 Crie seu primeiro projeto
-> 2. 📊 Faça uma análise completa
-> 3. 📁 Use o template para próximos projetos
+> **Ordem recomendada:**
+> 1. Crie seu primeiro projeto
+> 2. Faça uma análise completa
+> 3. Use o template para próximos projetos
 
 ---
 
-## 🚀 Workflow 1: Criando Seu Primeiro Projeto R
+## Workflow 1: Criando Seu Primeiro Projeto R
 
-### **📋 Checklist Inicial (antes de começar):**
+### **Checklist Inicial (antes de começar):**
 - [ ] VS Code instalado
 - [ ] Extensão R instalada (`REditorSupport.r`)
 - [ ] Extensão Quarto instalada (`quarto.quarto`)
@@ -59,7 +59,7 @@ code .
 **2.3. Criar `.Rprofile`:**
 ```r
 # Configuração do projeto
-cat("🚀 Projeto R iniciado no VS Code!\n")
+cat("Projeto R iniciado no VS Code!\n")
 
 if (interactive()) {
   # Carregar pacotes essenciais
@@ -68,7 +68,7 @@ if (interactive()) {
     library(here)
   })
   
-  cat("📁 Pasta do projeto:", here(), "\n")
+  cat("Pasta do projeto:", here(), "\n")
 }
 
 # Opções padrão
@@ -114,11 +114,11 @@ Descrição: Projeto de exemplo para aprender VS Code
 **3.1. Criar script de teste (`scripts/01_teste.R`):**
 ```r
 # Teste inicial do ambiente
-cat("✅ VS Code + R funcionando!\n")
+cat("VS Code + R funcionando!\n")
 
 # Testar pacotes
 library(here)
-cat("📁 Estou em:", here(), "\n")
+cat("Estou em:", here(), "\n")
 
 # Criar dados de exemplo
 dados_teste <- data.frame(
@@ -130,7 +130,7 @@ print(dados_teste)
 
 # Salvar resultado
 write.csv(dados_teste, here("data", "processed", "teste.csv"), row.names = FALSE)
-cat("💾 Arquivo salvo em data/processed/\n")
+cat("Arquivo salvo em data/processed/\n")
 ```
 
 **3.2. Executar o teste:**
@@ -139,7 +139,7 @@ cat("💾 Arquivo salvo em data/processed/\n")
 3. Digite `R` e pressione Enter
 4. Use `Ctrl+Enter` para executar linha por linha
 
-**✅ Se tudo funcionou, você verá:**
+**Se tudo funcionou, você verá:**
 - Mensagem de boas-vindas
 - Caminho do projeto
 - Dados impressos
@@ -147,7 +147,7 @@ cat("💾 Arquivo salvo em data/processed/\n")
 
 ---
 
-## 📊 Workflow 2: Análise Completa Passo-a-Passo
+## Workflow 2: Análise Completa Passo-a-Passo
 
 ### **Cenário Real: Análise de Vendas**
 
@@ -173,7 +173,7 @@ vendas <- data.frame(
 
 # Salvar dados
 write.csv(vendas, here("data", "raw", "vendas_2024.csv"), row.names = FALSE)
-cat("📊 Dados de vendas criados!\n")
+cat("Dados de vendas criados!\n")
 ```
 
 **1.2. Executar a geração:**
@@ -191,7 +191,7 @@ vendas <- read.csv(here("data", "raw", "vendas_2024.csv"))
 vendas$data <- as.Date(vendas$data)
 
 # Resumo dos dados
-cat("📊 Resumo dos dados:\n")
+cat("Resumo dos dados:\n")
 print(summary(vendas))
 
 # Vendas por produto
@@ -206,7 +206,7 @@ print(vendas_vendedor)
 write.csv(vendas_produto, here("data", "processed", "vendas_por_produto.csv"), row.names = FALSE)
 write.csv(vendas_vendedor, here("data", "processed", "vendas_por_vendedor.csv"), row.names = FALSE)
 
-cat("✅ Análise exploratória concluída!\n")
+cat("Análise exploratória concluída!\n")
 ```
 
 ### **Passo 3: Criar Relatório Quarto**
@@ -297,7 +297,7 @@ ggplot(vendas_mensal, aes(x = mes, y = valor)) +
 2. Pressione `Ctrl+Shift+K` para renderizar
 3. Ou use Command Palette: `⌘+⇧+P` → "Quarto: Render"
 
-### **✅ Resultado Final:**
+### **Resultado Final:**
 - Scripts R funcionais
 - Dados processados salvos
 - Relatório HTML profissional
@@ -305,7 +305,7 @@ ggplot(vendas_mensal, aes(x = mes, y = valor)) +
 
 ---
 
-## 📁 Workflow 3: Template Reutilizável
+## Workflow 3: Template Reutilizável
 
 ### **Script de Criação Automática**
 
@@ -320,12 +320,12 @@ Salve este script como `criar_projeto_r.sh`:
 PROJECT_NAME=$1
 
 if [ -z "$PROJECT_NAME" ]; then
-    echo "❌ Erro: Forneça o nome do projeto"
+    echo "Erro: Forneça o nome do projeto"
     echo "Uso: ./criar_projeto_r.sh meu_projeto"
     exit 1
 fi
 
-echo "🚀 Criando projeto: $PROJECT_NAME"
+echo "Criando projeto: $PROJECT_NAME"
 
 # Criar estrutura
 mkdir -p "$PROJECT_NAME"/{data/{raw,processed,external},scripts,notebooks,functions,output/{figures,tables,reports},.vscode}
@@ -335,14 +335,14 @@ cd "$PROJECT_NAME"
 # Arquivos de configuração
 cat > .Rprofile << 'EOF'
 # Configuração do projeto
-cat("🚀 Projeto R iniciado no VS Code!\n")
+cat("Projeto R iniciado no VS Code!\n")
 
 if (interactive()) {
   suppressMessages({
     if (!require(here)) install.packages("here")
     library(here)
   })
-  cat("📁 Pasta do projeto:", here(), "\n")
+  cat("Pasta do projeto:", here(), "\n")
 }
 
 options(
@@ -419,8 +419,8 @@ cat > scripts/01_setup.R << 'EOF'
 # Setup do projeto
 library(here)
 
-cat("✅ Projeto configurado!\n")
-cat("📁 Diretório:", here(), "\n")
+cat("Projeto configurado!\n")
+cat("Diretório:", here(), "\n")
 
 # Instalar pacotes se necessário
 # install.packages(c("tidyverse", "ggplot2"))
@@ -463,8 +463,8 @@ EOF
 # Arquivo .here (marcador de raiz)
 touch .here
 
-echo "✅ Projeto '$PROJECT_NAME' criado com sucesso!"
-echo "📂 Para abrir: cd $PROJECT_NAME && code ."
+echo "Projeto '$PROJECT_NAME' criado com sucesso!"
+echo "Para abrir: cd $PROJECT_NAME && code ."
 ```
 
 ### **Como usar o template:**
@@ -482,9 +482,9 @@ cd analise_financeira && code .
 
 ---
 
-## 💡 Dicas de Produtividade
+## Dicas de Produtividade
 
-### **🔄 Workflow Diário Típico:**
+### **Workflow Diário Típico:**
 
 1. **Abrir projeto**: `code .` no terminal
 2. **Verificar status**: README abre automaticamente
@@ -494,7 +494,7 @@ cd analise_financeira && code .
 6. **Criar relatório**: Arquivo `.qmd` com `Ctrl+Shift+K`
 7. **Commit mudanças**: Git integrado no VS Code
 
-### **⚡ Atalhos para Velocidade:**
+### **Atalhos para Velocidade:**
 
 - `Ctrl+P` → Abrir arquivo rapidamente
 - `Ctrl+Shift+P` → Command Palette
@@ -503,7 +503,7 @@ cd analise_financeira && code .
 - `Ctrl+Alt+I` → Chunk R em Quarto
 - `Ctrl+`` → Terminal toggle
 
-### **📋 Checklist de Projeto:**
+### **Checklist de Projeto:**
 
 - [ ] Estrutura de pastas criada
 - [ ] `.Rprofile` configurado
@@ -515,7 +515,7 @@ cd analise_financeira && code .
 
 ---
 
-## 🎯 Próximos Passos
+## Próximos Passos
 
 Após dominar estes workflows:
 
@@ -525,4 +525,4 @@ Após dominar estes workflows:
 4. **Configure tasks automáticas** para tarefas repetitivas
 5. **Integre com GitHub** para backup automático
 
-**🚀 Com estes workflows, você está pronto para ser produtivo no VS Code desde o primeiro dia!**
+**Com estes workflows, você está pronto para ser produtivo no VS Code desde o primeiro dia!**
