@@ -11,12 +11,26 @@ Documentar como acessar, editar e manter os arquivos de configuração do VS Cod
 ## Estrutura do Repositório
 
 ```
-├── configuracoes.md          # Anotações sobre configurações do VS Code
-├── versoes_atuais/          # Versões atuais dos arquivos de configuração
-│   ├── settings.json        # Configurações gerais do VS Code
-│   └── keybindings.json     # Atalhos de teclado personalizados
-└── README.md               # Este arquivo
+├── README.md                # Este arquivo
+├── atalhos-macos.md         # Atalhos do VS Code para macOS
+├── configuracoes.md         # Anotações sobre configurações do VS Code
+└── versoes_atuais/          # Versões atuais dos arquivos de configuração
+    ├── settings.json        # Configurações gerais do VS Code
+    └── keybindings.json     # Atalhos de teclado personalizados
 ```
+
+## Conteúdo
+
+### 📋 [Atalhos para macOS](atalhos-macos.md)
+Principais atalhos de teclado do VS Code otimizados para MacBook Air M1, organizados por categoria.
+
+### ⚙️ [Configurações](configuracoes.md)
+Anotações sobre como acessar e configurar o VS Code.
+
+### 📁 Versões Atuais
+Backup das configurações atuais:
+- [`settings.json`](versoes_atuais/settings.json) - Configurações gerais
+- [`keybindings.json`](versoes_atuais/keybindings.json) - Atalhos personalizados
 
 ## Como usar
 
