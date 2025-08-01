@@ -13,6 +13,7 @@ Documentar como acessar, editar e manter os arquivos de configuração do VS Cod
 ```
 ├── README.md                # Este arquivo
 ├── atalhos-macos.md         # Atalhos do VS Code para macOS
+├── projeto-r-vscode.md      # Guia: Do RStudio para VS Code
 ├── configuracoes.md         # Anotações sobre configurações do VS Code
 └── versoes_atuais/          # Versões atuais dos arquivos de configuração
     ├── settings.json        # Configurações gerais do VS Code
@@ -23,6 +24,9 @@ Documentar como acessar, editar e manter os arquivos de configuração do VS Cod
 
 ### 📋 [Atalhos para macOS](atalhos-macos.md)
 Principais atalhos de teclado do VS Code otimizados para MacBook Air M1, organizados por categoria.
+
+### 🔄 [Projetos R: Do RStudio para VS Code](projeto-r-vscode.md)
+Guia completo para replicar a experiência de projetos RStudio no VS Code, incluindo configurações, estrutura de pastas e workflow.
 
 ### ⚙️ [Configurações](configuracoes.md)
 Anotações sobre como acessar e configurar o VS Code.
