@@ -2,7 +2,7 @@
 
 *Guia introdutório para VS Code 1.102.3 (Universal) - Transição do RStudio*
 
-## 🎯 O que é o Visual Studio Code?
+## O que é o Visual Studio Code?
 
 O **Visual Studio Code** (VS Code) é um editor de código leve, mas poderoso, desenvolvido pela Microsoft. Diferente de uma IDE tradicional como o RStudio, o VS Code é:
 
@@ -12,7 +12,7 @@ O **Visual Studio Code** (VS Code) é um editor de código leve, mas poderoso, d
 - **Gratuito e Open Source**
 - **Altamente personalizável**
 
-## 🏗 Arquitetura do VS Code
+## Arquitetura do VS Code
 
 ### **Interface Principal**
 ```
@@ -36,13 +36,13 @@ O **Visual Studio Code** (VS Code) é um editor de código leve, mas poderoso, d
 
 ### **Principais Áreas:**
 
-1. **🔍 Activity Bar** (esquerda) - Navegação principal
-2. **📁 Sidebar** - Explorador de arquivos, busca, controle de versão
-3. **✏️ Editor Area** - Onde você escreve código
-4. **🗺 Minimap** (direita) - Mapa de navegação do código
-5. **🖥 Terminal/Panel** (inferior) - Terminal integrado e saídas
+1. **Activity Bar** (esquerda) - Navegação principal
+2. **Sidebar** - Explorador de arquivos, busca, controle de versão
+3. **Editor Area** - Onde você escreve código
+4. **Minimap** (direita) - Mapa de navegação do código
+5. **Terminal/Panel** (inferior) - Terminal integrado e saídas
 
-## 🎛 Conceitos Fundamentais
+## Conceitos Fundamentais
 
 ### **1. Workspaces vs Pastas**
 | Conceito | Descrição | Equivalente RStudio |
@@ -68,7 +68,7 @@ O **centro de comando** do VS Code - acesso a TUDO:
 - Configurações: `> Preferences: Open Settings`
 - Git: `> Git: Clone`
 
-## 🔧 Sistema de Configuração
+## Sistema de Configuração
 
 ### **Hierarquia de Configurações:**
 ```
@@ -89,7 +89,7 @@ O **centro de comando** do VS Code - acesso a TUDO:
 | `tasks.json` | `.vscode/` | Automatização de tarefas |
 | `launch.json` | `.vscode/` | Configurações de debug |
 
-## 🎨 Personalização
+## Personalização
 
 ### **Temas e Aparência**
 - **Tema de Cores**: `⌘+K ⌘+T` para alternar
@@ -113,7 +113,7 @@ O **centro de comando** do VS Code - acesso a TUDO:
 }
 ```
 
-## 🚀 Workflows Essenciais
+## Workflows Essenciais
 
 ### **1. Fluxo de Trabalho Básico**
 ```
@@ -144,7 +144,7 @@ O **centro de comando** do VS Code - acesso a TUDO:
 6. Renderizar Quarto (⌘+⇧+K)
 ```
 
-## 🔍 Funcionalidades Avançadas
+## Funcionalidades Avançadas
 
 ### **1. Multi-cursor e Seleção**
 - **Múltiplos cursores**: `⌥+click`
@@ -164,7 +164,7 @@ O **centro de comando** do VS Code - acesso a TUDO:
 - **Format Document**: `⌥+⇧+F`
 - **Organizar imports**: `⌥+⇧+O`
 
-## 🎯 VS Code vs RStudio - Comparação Prática
+## VS Code vs RStudio - Comparação Prática
 
 | Aspecto | RStudio | VS Code |
 |---------|---------|---------|
@@ -177,7 +177,7 @@ O **centro de comando** do VS Code - acesso a TUDO:
 | **Extensibilidade** | Limitada | Ilimitada |
 | **Curva de Aprendizado** | Suave para R | Inicial íngreme, depois produtiva |
 
-## 🛠 Configuração Inicial Recomendada
+## Configuração Inicial Recomendada
 
 ### **1. Extensões Essenciais (ordem de instalação):**
 ```bash
@@ -229,7 +229,7 @@ meu_projeto/
 └── README.md              # Documentação
 ```
 
-## 🎓 Próximos Passos para Dominar o VS Code
+## Próximos Passos para Dominar o VS Code
 
 ### **Fase 1: Familiarização (1-2 semanas)**
 - [ ] Explorar interface básica
@@ -249,7 +249,7 @@ meu_projeto/
 - [ ] Explorar extensões específicas
 - [ ] Otimizar configurações pessoais
 
-## 💡 Dicas de Transição do RStudio
+## Dicas de Transição do RStudio
 
 ### **Para se sentir em casa:**
 1. **Use o Terminal** como console R (`⌃+``, depois `R`)
@@ -259,20 +259,20 @@ meu_projeto/
 5. **Aproveite** funcionalidades extras (Git, multi-linguagem)
 
 ### **O que você ganhará:**
-- ✅ **Performance superior** com arquivos grandes
-- ✅ **Flexibilidade** para outras linguagens
-- ✅ **Controle total** sobre o ambiente
-- ✅ **Ecosystem rico** de extensões
-- ✅ **Integração Git** avançada
-- ✅ **Customização** ilimitada
+- **Performance superior** com arquivos grandes
+- **Flexibilidade** para outras linguagens
+- **Controle total** sobre o ambiente
+- **Ecosystem rico** de extensões
+- **Integração Git** avançada
+- **Customização** ilimitada
 
 ---
 
-## 📚 Recursos para Continuar Aprendendo
+## Recursos para Continuar Aprendendo
 
 - **Documentação Oficial**: [code.visualstudio.com](https://code.visualstudio.com/docs)
 - **R Extension Guide**: [Guia específico para R](https://github.com/REditorSupport/vscode-R)
 - **Quarto + VS Code**: [Integração oficial](https://quarto.org/docs/tools/vscode.html)
 - **Marketplace**: [Extensões](https://marketplace.visualstudio.com/)
 
-*💡 Lembre-se: O VS Code é uma ferramenta que cresce com você. Comece simples e vá adicionando complexidade conforme sua necessidade!*
+*Lembre-se: O VS Code é uma ferramenta que cresce com você. Comece simples e vá adicionando complexidade conforme sua necessidade!*
