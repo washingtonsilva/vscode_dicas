@@ -77,7 +77,7 @@ Crie `.vscode/settings.json` com configurações específicas do projeto:
     "r.rtermSendDelay": 0,
     "files.associations": {
         "*.R": "r",
-        "*.Rmd": "rmd"
+        "*.qmd": "quarto"
     },
     "workbench.startupEditor": "readme",
     "explorer.confirmDelete": true,
@@ -133,12 +133,17 @@ meu_projeto_r/
 │   ├── 02_clean.R              # Limpeza de dados
 │   ├── 03_analysis.R           # Análises
 │   └── 04_visualizations.R     # Visualizações
+├── notebooks/
+│   ├── exploratory.qmd         # Análise exploratória
+│   ├── report.qmd              # Relatório principal
+│   └── presentation.qmd        # Apresentação
 ├── functions/
 │   └── utils.R                 # Funções customizadas
 ├── output/
 │   ├── figures/                # Gráficos
 │   ├── tables/                 # Tabelas
-│   └── reports/                # Relatórios
+│   ├── reports/                # Relatórios renderizados
+│   └── presentations/          # Apresentações renderizadas
 ├── renv/                       # Ambiente isolado (opcional)
 ├── .Rprofile                   # Configurações R
 ├── .gitignore                  # Git ignore
@@ -151,13 +156,14 @@ meu_projeto_r/
 
 Instale estas extensões para replicar funcionalidades do RStudio:
 
-### **Essenciais para R:**
+### **Essenciais para R e Quarto:**
 ```bash
 # Via Command Palette (⌘+⇧+P)
 ext install REditorSupport.r
 ext install RDebugger.r-debugger
 ext install quarto.quarto
 ext install REditorSupport.r-lsp
+ext install ms-toolsai.jupyter
 ```
 
 ### **Produtividade Geral:**
@@ -178,6 +184,79 @@ ext install ms-vscode.hexeditor
 | Help | R: Show Help | `⌘+⇧+P` → "R: Show Help" |
 | Plots | R: Show Plot | `⌘+⇧+P` → "R: Show Plot" |
 | Run Script | Send to Terminal | `⌘+⏎` (linha) ou `⌘+⇧+S` (arquivo) |
+| Knit Document | Quarto Render | `⌘+⇧+K` ou `⌘+⇧+P` → "Quarto: Render" |
+| R Markdown | Quarto Document | Arquivo `.qmd` com preview integrado |
+
+## 📄 Trabalhando com Quarto (.qmd)
+
+### **Configuração Quarto no Workspace**
+Adicione ao `.vscode/settings.json`:
+```json
+{
+    "quarto.render.renderOnSave": false,
+    "quarto.render.previewType": "external",
+    "files.associations": {
+        "*.qmd": "quarto"
+    },
+    "[quarto]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": false,
+            "strings": false,
+            "other": true
+        }
+    }
+}
+```
+
+### **Estrutura de Documento Quarto Padrão**
+```yaml
+---
+title: "Análise de Dados"
+author: "Seu Nome"
+date: "`r Sys.Date()`"
+format: 
+  html:
+    code-fold: true
+    toc: true
+    theme: cosmo
+  pdf:
+    documentclass: article
+execute:
+  warning: false
+  message: false
+---
+```
+
+### **Atalhos Quarto Essenciais**
+| Ação | Atalho | Descrição |
+|------|--------|-----------|
+| **Render Document** | `⌘+⇧+K` | Renderizar documento atual |
+| **Preview** | `⌘+⇧+P` → "Quarto: Preview" | Visualizar preview |
+| **Run Cell** | `⌘+⇧+⏎` | Executar célula de código |
+| **Run All Cells** | `⌘+⌥+R` | Executar todas as células |
+| **Insert Code Cell** | `⌃+⇧+I` | Inserir nova célula de código |
+
+### **Template de Projeto Quarto**
+Crie `_quarto.yml` na raiz do projeto:
+```yaml
+project:
+  type: default
+  output-dir: output
+  
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    code-fold: show
+  pdf:
+    documentclass: article
+    
+execute:
+  freeze: auto
+  cache: true
+```
 
 ## 🎯 Dicas de Produtividade
 
@@ -198,7 +277,9 @@ Configure no `settings.json`:
 ```
 
 ### **3. Snippets Customizados**
-Crie snippets R em `⌘+⇧+P` → "Configure User Snippets":
+Crie snippets R e Quarto em `⌘+⇧+P` → "Configure User Snippets":
+
+**Para R (r.json):**
 ```json
 {
     "Load Libraries": {
@@ -213,6 +294,43 @@ Crie snippets R em `⌘+⇧+P` → "Configure User Snippets":
 }
 ```
 
+**Para Quarto (quarto.json):**
+```json
+{
+    "Quarto Header": {
+        "prefix": "qheader",
+        "body": [
+            "---",
+            "title: \"$1\"",
+            "author: \"${2:Seu Nome}\"",
+            "date: \"`r Sys.Date()`\"",
+            "format: ",
+            "  html:",
+            "    code-fold: true",
+            "    toc: true",
+            "execute:",
+            "  warning: false",
+            "  message: false",
+            "---",
+            "",
+            "$0"
+        ]
+    },
+    "R Code Block": {
+        "prefix": "rblock",
+        "body": [
+            "```{r}",
+            "#| label: $1",
+            "#| echo: true",
+            "",
+            "$0",
+            "",
+            "```"
+        ]
+    }
+}
+```
+
 ### **4. Tasks Automatizadas**
 Crie `.vscode/tasks.json`:
 ```json
@@ -220,15 +338,29 @@ Crie `.vscode/tasks.json`:
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Run R Script",
+            "label": "Render Quarto Document",
             "type": "shell",
-            "command": "Rscript",
-            "args": ["${file}"],
+            "command": "quarto",
+            "args": ["render", "${file}"],
             "group": "build",
             "presentation": {
                 "echo": true,
                 "reveal": "always"
             }
+        },
+        {
+            "label": "Render All Quarto",
+            "type": "shell",
+            "command": "quarto",
+            "args": ["render"],
+            "group": "build"
+        },
+        {
+            "label": "Run R Script",
+            "type": "shell",
+            "command": "Rscript",
+            "args": ["${file}"],
+            "group": "build"
         }
     ]
 }
@@ -238,14 +370,53 @@ Crie `.vscode/tasks.json`:
 
 ### Template de Novo Projeto:
 ```bash
-# Script para criar novo projeto R
+# Script para criar novo projeto R + Quarto
 mkdir $1
 cd $1
-mkdir -p data/{raw,processed,external} scripts functions output/{figures,tables,reports} .vscode
+mkdir -p data/{raw,processed,external} scripts notebooks functions output/{figures,tables,reports,presentations} .vscode
 
 # Criar arquivos básicos
-touch .Rprofile .gitignore .here README.md
-touch .vscode/settings.json
+touch .Rprofile .gitignore .here README.md _quarto.yml
+touch .vscode/settings.json .vscode/tasks.json
+
+# Criar template de notebook Quarto
+cat > notebooks/template.qmd << 'EOF'
+---
+title: "Template de Análise"
+author: "Seu Nome"
+date: "`r Sys.Date()`"
+format: 
+  html:
+    code-fold: true
+    toc: true
+    theme: cosmo
+execute:
+  warning: false
+  message: false
+---
+
+## Carregamento de Bibliotecas
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(here)
+```
+
+## Importação de Dados
+
+```{r}
+#| label: import
+
+```
+
+## Análise Exploratória
+
+```{r}
+#| label: eda
+
+```
+EOF
 
 # Inicializar Git
 git init
@@ -262,14 +433,17 @@ code .
 4. **Git Integration** - Melhor interface para Git
 5. **Terminal Integrado** - Acesso direto ao sistema
 6. **Customização** - Totalmente configurável
+7. **Quarto Native** - Suporte nativo superior para Quarto
+8. **Multi-format** - Renderização simultânea HTML/PDF/Word
 
 ## 🔗 Recursos Adicionais
 
 - **Documentação R Extension**: [R Extension Guide](https://github.com/REditorSupport/vscode-R)
-- **Quarto Integration**: Para R Markdown no VS Code
+- **Quarto Integration**: [Quarto VS Code Extension](https://quarto.org/docs/tools/vscode.html)
+- **Quarto Documentation**: [Quarto Official Docs](https://quarto.org/)
 - **renv Documentation**: Para ambientes isolados
 - **here Package**: Para gerenciamento de paths
 
 ---
 
-*💡 **Dica**: Comece com um projeto simples e vá adicionando complexidade conforme se familiariza com o VS Code!*
+*💡 **Dica**: Comece com um projeto simples usando Quarto e vá adicionando complexidade conforme se familiariza com o VS Code!*
