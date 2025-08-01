@@ -2,23 +2,23 @@
 
 Este guia explica como replicar a experiência de **Projetos RStudio** no **VS Code**, mantendo a organização e funcionalidades que você já conhece.
 
-## 📖 Como usar este guia
+## Como usar este guia
 
 > **Para iniciantes no VS Code:**
 > 
-> 1. **🔍 Procure as caixas azuis** com "🤔 O que é...?" - elas explicam conceitos técnicos
-> 2. **⚠️ Fique atento aos avisos** "Para Iniciantes" - são dicas importantes
-> 3. **💡 Leia as dicas** em caixas amarelas - são truques úteis
-> 4. **📚 Consulte o Glossário** no final se algum termo não fizer sentido
-> 5. **🚀 Comece simples** - não tente usar tudo de uma vez!
+> 1. **Procure as caixas azuis** com "O que é...?" - elas explicam conceitos técnicos
+> 2. **Fique atento aos avisos** "Para Iniciantes" - são dicas importantes
+> 3. **Leia as dicas** em caixas amarelas - são truques úteis
+> 4. **Consulte o Glossário** no final se algum termo não fizer sentido
+> 5. **Comece simples** - não tente usar tudo de uma vez!
 
 > **Ordem recomendada de leitura:**
-> 1. Leia as seções conceituais (🤔 O que é...)
+> 1. Leia as seções conceituais (O que é...)
 > 2. Siga o setup passo-a-passo
 > 3. Crie seu primeiro projeto
 > 4. Explore funcionalidades avançadas depois
 
-## 🤔 O que é um Projeto RStudio?
+## O que é um Projeto RStudio?
 
 No RStudio, um projeto é:
 - Uma pasta com arquivo `.Rproj`
@@ -28,16 +28,16 @@ No RStudio, um projeto é:
 - Git integration
 - Package management isolado (com `renv`)
 
-## 🎯 Equivalente no VS Code: Workspaces
+## Equivalente no VS Code: Workspaces
 
 No VS Code, o equivalente mais próximo são os **Workspaces**, que oferecem:
 
-> **🤔 O que é um Workspace?**
+> **O que é um Workspace?**
 > 
 > Um **Workspace** no VS Code é como uma "área de trabalho personalizada" para seu projeto. É uma forma de agrupar arquivos, configurações e ferramentas específicas para um projeto. Existem dois tipos principais:
 
 ### Opção 1: **Folder Workspace** (Recomendado para R)
-> **📚 Explicação Simples**: É quando você abre uma pasta no VS Code e ela se torna seu "projeto". Todas as configurações ficam numa pasta `.vscode/` dentro do seu projeto.
+> **Explicação Simples**: É quando você abre uma pasta no VS Code e ela se torna seu "projeto". Todas as configurações ficam numa pasta `.vscode/` dentro do seu projeto.
 
 ```
 meu_projeto_r/
@@ -55,7 +55,7 @@ meu_projeto_r/
 ```
 
 ### Opção 2: **Multi-root Workspace** (Para projetos complexos)
-> **📚 Explicação Simples**: É quando você precisa trabalhar com várias pastas ao mesmo tempo, como se fossem um projeto único. Por exemplo, dados em uma pasta, código em outra, e documentação em uma terceira.
+> **Explicação Simples**: É quando você precisa trabalhar com várias pastas ao mesmo tempo, como se fossem um projeto único. Por exemplo, dados em uma pasta, código em outra, e documentação em uma terceira.
 
 ```json
 // arquivo .code-workspace
@@ -71,9 +71,9 @@ meu_projeto_r/
 }
 ```
 
-> **⚠️ Para Iniciantes**: Comece sempre com **Folder Workspace** (Opção 1). É mais simples e cobre 95% dos casos!
+> **Para Iniciantes**: Comece sempre com **Folder Workspace** (Opção 1). É mais simples e cobre 95% dos casos!
 
-## 🛠 Configuração Passo a Passo
+## Configuração Passo a Passo
 
 ### 1. **Criar o Projeto**
 
@@ -91,7 +91,7 @@ code .
 
 ### 2. **Configurar Workspace Settings**
 
-> **🤔 O que são Workspace Settings?**
+> **O que são Workspace Settings?**
 > 
 > São configurações específicas do seu projeto que ficam salvas na pasta `.vscode/settings.json`. É como ter "preferências personalizadas" que só valem para aquele projeto específico. Por exemplo: você pode querer usar fonte maior em um projeto e menor em outro.
 
@@ -99,27 +99,27 @@ Crie `.vscode/settings.json` com configurações específicas do projeto:
 
 ```json
 {
-    "r.rterm.option": [],              // 📝 Opções extras para o R (deixe vazio por enquanto)
-    "r.rpath.mac": "/usr/local/bin/R", // 📍 Onde o VS Code encontra o R no seu Mac
-    "r.alwaysUseActiveTerminal": true, // 🔄 Sempre usar o mesmo terminal para R
-    "r.bracketedPaste": true,          // 📋 Colar código de forma segura
-    "r.sessionWatcher": true,          // 👀 VS Code monitora sua sessão R
-    "r.rtermSendDelay": 0,            // ⚡ Sem delay ao enviar código (mais rápido)
-    "files.associations": {            // 📄 Que programa abre cada tipo de arquivo
+    "r.rterm.option": [],              // Opções extras para o R (deixe vazio por enquanto)
+    "r.rpath.mac": "/usr/local/bin/R", // Onde o VS Code encontra o R no seu Mac
+    "r.alwaysUseActiveTerminal": true, // Sempre usar o mesmo terminal para R
+    "r.bracketedPaste": true,          // Colar código de forma segura
+    "r.sessionWatcher": true,          // VS Code monitora sua sessão R
+    "r.rtermSendDelay": 0,            // Sem delay ao enviar código (mais rápido)
+    "files.associations": {            // Que programa abre cada tipo de arquivo
         "*.R": "r",                    //   Arquivos .R abrem como R
         "*.qmd": "quarto"              //   Arquivos .qmd abrem como Quarto
     },
-    "workbench.startupEditor": "readme",     // 📖 Abre README ao iniciar projeto
-    "explorer.confirmDelete": true,          // ⚠️ Confirmar antes de deletar arquivos
-    "git.openRepositoryInParentFolders": "never" // 🚫 Não procurar Git em pastas superiores
+    "workbench.startupEditor": "readme",     // Abre README ao iniciar projeto
+    "explorer.confirmDelete": true,          // Confirmar antes de deletar arquivos
+    "git.openRepositoryInParentFolders": "never" // Não procurar Git em pastas superiores
 }
 ```
 
-> **💡 Dica para Iniciantes**: Não se preocupe em entender cada configuração agora. Copie e cole este arquivo - ele já está otimizado para trabalhar com R!
+> **Dica para Iniciantes**: Não se preocupe em entender cada configuração agora. Copie e cole este arquivo - ele já está otimizado para trabalhar com R!
 
 ### 3. **Configurar R Environment (.Rprofile)**
 
-> **🤔 O que é .Rprofile?**
+> **O que é .Rprofile?**
 > 
 > É um arquivo que o R lê automaticamente toda vez que você inicia uma sessão R naquela pasta. É como ter um "script de inicialização" que configura seu ambiente R sempre da mesma forma. No RStudio, isso acontece automaticamente quando você abre um projeto.
 
@@ -127,7 +127,7 @@ Crie `.Rprofile` na raiz do projeto:
 
 ```r
 # .Rprofile - Configurações específicas do projeto
-cat("🚀 Projeto R carregado no VS Code!\n")  # Mensagem de boas-vindas
+cat("Projeto R carregado no VS Code!\n")  # Mensagem de boas-vindas
 
 # Definir working directory
 if (interactive()) {  # Só executa se estivermos em sessão interativa
@@ -138,11 +138,11 @@ if (interactive()) {  # Só executa se estivermos em sessão interativa
   
   # Carregar pacotes comuns (opcional)
   suppressMessages({
-    library(here)      # 📍 Gerenciamento de paths (caminhos) relativos
-    library(renv)      # 📦 Gerenciamento de pacotes (opcional)
+    library(here)      # Gerenciamento de paths (caminhos) relativos
+    library(renv)      # Gerenciamento de pacotes (opcional)
   })
   
-  cat("📁 Working directory:", getwd(), "\n")  # Mostra onde estamos
+  cat("Working directory:", getwd(), "\n")  # Mostra onde estamos
 }
 
 # Opções R específicas do projeto
@@ -154,7 +154,7 @@ options(
 )
 ```
 
-> **💡 Para Iniciantes**: Este arquivo é opcional, mas muito útil! Ele garante que seu ambiente R sempre inicie da mesma forma, com as mesmas configurações.
+> **Para Iniciantes**: Este arquivo é opcional, mas muito útil! Ele garante que seu ambiente R sempre inicie da mesma forma, com as mesmas configurações.
 
 ### 4. **Estrutura de Pastas Recomendada**
 
@@ -190,9 +190,9 @@ meu_projeto_r/
 └── README.md                   # Documentação
 ```
 
-## 🔧 Extensões Essenciais
+## Extensões Essenciais
 
-> **🤔 O que são Extensões?**
+> **O que são Extensões?**
 > 
 > Extensões são como "aplicativos" que você instala no VS Code para adicionar funcionalidades. O VS Code sozinho é apenas um editor de texto. As extensões é que transformam ele numa ferramenta poderosa para R, Python, etc.
 > 
@@ -204,14 +204,14 @@ Instale estas extensões para replicar funcionalidades do RStudio:
 ```bash
 # Via Command Palette (⌘+⇧+P) → "Extensions: Install Extensions"
 
-REditorSupport.r           # 🔵 Suporte principal para R (OBRIGATÓRIA)
-RDebugger.r-debugger       # 🐛 Para encontrar erros no código R  
-quarto.quarto              # 📄 Para trabalhar com arquivos .qmd
-REditorSupport.r-lsp       # 🧠 Inteligência artificial para R (autocomplete)
-ms-toolsai.jupyter         # 📓 Para notebooks (se usar)
+REditorSupport.r           # Suporte principal para R (OBRIGATÓRIA)
+RDebugger.r-debugger       # Para encontrar erros no código R  
+quarto.quarto              # Para trabalhar com arquivos .qmd
+REditorSupport.r-lsp       # Inteligência artificial para R (autocomplete)
+ms-toolsai.jupyter         # Para notebooks (se usar)
 ```
 
-> **📋 O que cada uma faz:**
+> **O que cada uma faz:**
 > - **R Extension**: Transforma VS Code numa IDE para R (como RStudio)
 > - **R Debugger**: Ajuda a encontrar erros no seu código
 > - **Quarto**: Para escrever relatórios e apresentações
@@ -220,15 +220,15 @@ ms-toolsai.jupyter         # 📓 Para notebooks (se usar)
 
 ### **Produtividade Geral:**
 ```bash
-ms-vscode.vscode-json      # 📝 Para trabalhar com arquivos de configuração
-ms-python.python          # 🐍 Se também usar Python
-GitLens.gitlens            # 📊 Melhor interface para Git
-ms-vscode.hexeditor        # 🔍 Para examinar arquivos binários (avançado)
+ms-vscode.vscode-json      # Para trabalhar com arquivos de configuração
+ms-python.python          # Se também usar Python
+GitLens.gitlens            # Melhor interface para Git
+ms-vscode.hexeditor        # Para examinar arquivos binários (avançado)
 ```
 
-> **⚠️ Para Iniciantes**: Instale apenas as extensões de R por enquanto. Adicione outras conforme a necessidade!
+> **Para Iniciantes**: Instale apenas as extensões de R por enquanto. Adicione outras conforme a necessidade!
 
-## 📊 Workflow Comparativo
+## Workflow Comparativo
 
 | **RStudio** | **VS Code** | **Como Fazer** |
 |-------------|-------------|----------------|
@@ -241,7 +241,7 @@ ms-vscode.hexeditor        # 🔍 Para examinar arquivos binários (avançado)
 | Knit Document | Quarto Render | `⌘+⇧+K` ou `⌘+⇧+P` → "Quarto: Render" |
 | R Markdown | Quarto Document | Arquivo `.qmd` com preview integrado |
 
-## 📄 Trabalhando com Quarto (.qmd)
+## Trabalhando com Quarto (.qmd)
 
 ### **Configuração Quarto no Workspace**
 Adicione ao `.vscode/settings.json`:
@@ -293,39 +293,39 @@ execute:
 
 ### **Template de Projeto Quarto**
 
-> **🤔 O que é _quarto.yml?**
+> **O que é _quarto.yml?**
 > 
 > É o arquivo de configuração principal do Quarto para seu projeto. É como um "manual de instruções" que diz ao Quarto como renderizar seus documentos, onde salvar os resultados, qual tema usar, etc.
 
 Crie `_quarto.yml` na raiz do projeto:
 ```yaml
 project:
-  type: default                      # 📂 Tipo de projeto (padrão para a maioria)
-  output-dir: output                 # 📁 Pasta onde salvar arquivos renderizados
+  type: default                      # Tipo de projeto (padrão para a maioria)
+  output-dir: output                 # Pasta onde salvar arquivos renderizados
   
 format:
-  html:                             # 🌐 Configurações para HTML
-    theme: cosmo                    # 🎨 Tema visual (cosmo, flatly, etc.)
-    css: styles.css                 # 🎨 CSS customizado (opcional)
-    toc: true                       # 📚 Índice automático
-    code-fold: show                 # 📝 Código visível mas colapsável
-  pdf:                              # 📄 Configurações para PDF
-    documentclass: article          # 📃 Tipo de documento LaTeX
+  html:                             # Configurações para HTML
+    theme: cosmo                    # Tema visual (cosmo, flatly, etc.)
+    css: styles.css                 # CSS customizado (opcional)
+    toc: true                       # Índice automático
+    code-fold: show                 # Código visível mas colapsável
+  pdf:                              # Configurações para PDF
+    documentclass: article          # Tipo de documento LaTeX
     
 execute:
-  freeze: auto                      # ❄️ Não re-executar código se não mudou
-  cache: true                       # 💾 Salvar resultados para acelerar
+  freeze: auto                      # Não re-executar código se não mudou
+  cache: true                       # Salvar resultados para acelerar
 ```
 
-> **💡 Principais opções de tema**: cosmo, flatly, bootstrap, cerulean, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, yeti
+> **Principais opções de tema**: cosmo, flatly, bootstrap, cerulean, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, yeti
 > 
-> **⚠️ Para Iniciantes**: Use este arquivo como está. Você pode experimentar temas diferentes mudando apenas a linha `theme: cosmo`
+> **Para Iniciantes**: Use este arquivo como está. Você pode experimentar temas diferentes mudando apenas a linha `theme: cosmo`
 
-## 🎯 Dicas de Produtividade
+## Dicas de Produtividade
 
 ### **1. Working Directory Automático**
 
-> **🤔 O que é Working Directory?**
+> **O que é Working Directory?**
 > 
 > É a "pasta atual" onde o R está trabalhando. Quando você usa `read.csv("dados.csv")`, o R procura o arquivo na pasta de trabalho atual. No RStudio, isso é automático. No VS Code, precisamos configurar.
 
@@ -335,35 +335,35 @@ library(here)
 data <- read.csv(here("data", "raw", "dataset.csv"))
 ```
 
-> **💡 Por que usar `here()`?**
+> **Por que usar `here()`?**
 > - `read.csv("data/raw/dataset.csv")` pode dar erro se você não estiver na pasta certa
 > - `here("data", "raw", "dataset.csv")` sempre funciona, independente de onde você está
 > - É mais seguro e confiável
 
 ### **2. Sessão R Persistente**
 
-> **🤔 O que é uma Sessão R Persistente?**
+> **O que é uma Sessão R Persistente?**
 > 
 > É manter a mesma sessão R funcionando enquanto você trabalha, em vez de reiniciar o R toda vez. É como manter o RStudio aberto - suas variáveis e dados ficam na memória.
 
 Configure no `settings.json`:
 ```json
 {
-    "r.sessionWatcher": true,           // 👀 VS Code monitora sua sessão R
-    "r.alwaysUseActiveTerminal": true   // 🔄 Sempre usar o mesmo terminal
+    "r.sessionWatcher": true,           // VS Code monitora sua sessão R
+    "r.alwaysUseActiveTerminal": true   // Sempre usar o mesmo terminal
 }
 ```
 
-> **💡 Benefícios:**
+> **Benefícios:**
 > - Variáveis não são perdidas entre execuções
 > - Pacotes permanecem carregados
 > - Mais rápido (não precisa recarregar tudo)
 > 
-> **⚠️ Cuidado**: Às vezes é bom reiniciar a sessão R para garantir que seu código funciona "do zero"
+> **Cuidado**: Às vezes é bom reiniciar a sessão R para garantir que seu código funciona "do zero"
 
 ### **3. Snippets Customizados**
 
-> **🤔 O que são Snippets?**
+> **O que são Snippets?**
 > 
 > Snippets são "atalhos de código" - você digita uma palavra pequena e o VS Code expande para um bloco de código completo. Por exemplo: você digita `libs` e automaticamente aparece todo o código para carregar as bibliotecas principais do R.
 > 
@@ -375,8 +375,8 @@ Crie snippets R e Quarto em `⌘+⇧+P` → "Configure User Snippets":
 ```json
 {
     "Load Libraries": {
-        "prefix": "libs",                    // 💡 Digite "libs" e aperte Tab
-        "body": [                           // 📝 Código que será inserido:
+        "prefix": "libs",                    // Digite "libs" e aperte Tab
+        "body": [                           // Código que será inserido:
             "library(tidyverse)",           //    Carrega tidyverse
             "library(here)",                //    Carrega here
             "library(janitor)",             //    Carrega janitor
@@ -390,11 +390,11 @@ Crie snippets R e Quarto em `⌘+⇧+P` → "Configure User Snippets":
 ```json
 {
     "Quarto Header": {
-        "prefix": "qheader",                // 💡 Digite "qheader" e aperte Tab
+        "prefix": "qheader",                // Digite "qheader" e aperte Tab
         "body": [
             "---",
-            "title: \"$1\"",               // 🎯 $1 = primeiro lugar para digitar
-            "author: \"${2:Seu Nome}\"",    // 🎯 $2 = segundo lugar (com valor padrão)
+            "title: \"$1\"",               // $1 = primeiro lugar para digitar
+            "author: \"${2:Seu Nome}\"",    // $2 = segundo lugar (com valor padrão)
             "date: \"`r Sys.Date()`\"",
             "format: ",
             "  html:",
@@ -405,17 +405,17 @@ Crie snippets R e Quarto em `⌘+⇧+P` → "Configure User Snippets":
             "  message: false",
             "---",
             "",
-            "$0"                            // 🎯 $0 = posição final do cursor
+            "$0"                            // $0 = posição final do cursor
         ]
     },
     "R Code Block": {
-        "prefix": "rblock",                 // 💡 Digite "rblock" e aperte Tab
+        "prefix": "rblock",                 // Digite "rblock" e aperte Tab
         "body": [
             "```{r}",
-            "#| label: $1",                 // 🏷️ Nome do bloco de código
-            "#| echo: true",               // 📺 Mostrar o código no relatório
+            "#| label: $1",                 // Nome do bloco de código
+            "#| echo: true",               // Mostrar o código no relatório
             "",
-            "$0",                          // 🎯 Aqui você digita seu código R
+            "$0",                          // Aqui você digita seu código R
             "",
             "```"
         ]
@@ -423,7 +423,7 @@ Crie snippets R e Quarto em `⌘+⇧+P` → "Configure User Snippets":
 }
 ```
 
-> **💡 Como usar Snippets:**
+> **Como usar Snippets:**
 > 1. Digite o `prefix` (ex: "libs")
 > 2. Aperte `Tab`
 > 3. O código aparece automaticamente
@@ -431,7 +431,7 @@ Crie snippets R e Quarto em `⌘+⇧+P` → "Configure User Snippets":
 
 ### **4. Tasks Automatizadas**
 
-> **🤔 O que são Tasks?**
+> **O que são Tasks?**
 > 
 > Tasks são "comandos automatizados" que você pode executar com um clique. É como ter botões personalizados no VS Code. Por exemplo: um botão para renderizar seu documento Quarto, outro para executar todos os scripts R, etc.
 > 
@@ -443,42 +443,42 @@ Crie `.vscode/tasks.json`:
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Render Quarto Document",     // 📄 Nome que aparece no menu
-            "type": "shell",                      // 🖥️ Executa comando no terminal
-            "command": "quarto",                  // 🛠️ Programa a executar
-            "args": ["render", "${file}"],       // 📋 Argumentos: render + arquivo atual
-            "group": "build",                     // 📂 Grupo (organização)
+            "label": "Render Quarto Document",     // Nome que aparece no menu
+            "type": "shell",                      // Executa comando no terminal
+            "command": "quarto",                  // Programa a executar
+            "args": ["render", "${file}"],       // Argumentos: render + arquivo atual
+            "group": "build",                     // Grupo (organização)
             "presentation": {
-                "echo": true,                     // 📺 Mostrar comando executado
-                "reveal": "always"                // 👀 Sempre mostrar terminal
+                "echo": true,                     // Mostrar comando executado
+                "reveal": "always"                // Sempre mostrar terminal
             }
         },
         {
-            "label": "Render All Quarto",         // 📚 Renderizar todos arquivos Quarto
+            "label": "Render All Quarto",         // Renderizar todos arquivos Quarto
             "type": "shell",
             "command": "quarto",
-            "args": ["render"],                   // 📋 Sem argumentos = todos os arquivos
+            "args": ["render"],                   // Sem argumentos = todos os arquivos
             "group": "build"
         },
         {
-            "label": "Run R Script",              // ▶️ Executar script R atual
+            "label": "Run R Script",              // Executar script R atual
             "type": "shell",
-            "command": "Rscript",                 // 🛠️ Comando Rscript
-            "args": ["${file}"],                 // 📋 Arquivo atual
+            "command": "Rscript",                 // Comando Rscript
+            "args": ["${file}"],                 // Arquivo atual
             "group": "build"
         }
     ]
 }
 ```
 
-> **💡 Variáveis úteis:**
+> **Variáveis úteis:**
 > - `${file}` = arquivo que está aberto
 > - `${workspaceFolder}` = pasta do projeto
 > - `${fileBasename}` = nome do arquivo (sem caminho)
 > 
-> **⚠️ Para Iniciantes**: Copie este arquivo exatamente como está. Você pode personalizar depois!
+> **Para Iniciantes**: Copie este arquivo exatamente como está. Você pode personalizar depois!
 
-## 🚀 Inicialização Rápida
+## Inicialização Rápida
 
 ### Template de Novo Projeto:
 ```bash
@@ -537,7 +537,7 @@ git init
 code .
 ```
 
-## 💡 Vantagens do VS Code sobre RStudio
+## Vantagens do VS Code sobre RStudio
 
 1. **Performance** - Mais rápido com arquivos grandes
 2. **Flexibilidade** - Suporte a múltiplas linguagens
@@ -548,7 +548,7 @@ code .
 7. **Quarto Native** - Suporte nativo superior para Quarto
 8. **Multi-format** - Renderização simultânea HTML/PDF/Word
 
-## 🔗 Recursos Adicionais
+## Recursos Adicionais
 
 - **Documentação R Extension**: [R Extension Guide](https://github.com/REditorSupport/vscode-R)
 - **Quarto Integration**: [Quarto VS Code Extension](https://quarto.org/docs/tools/vscode.html)
@@ -558,7 +558,7 @@ code .
 
 ---
 
-## 📚 Glossário para Iniciantes
+## Glossário para Iniciantes
 
 > **Termos técnicos explicados de forma simples:**
 
@@ -588,4 +588,4 @@ code .
 - **Repository**: Pasta com controle de versões (histórico de mudanças)
 - **Commit**: "Salvar" uma versão do seu projeto no histórico
 
-*💡 **Dica**: Comece com um projeto simples usando Quarto e vá adicionando complexidade conforme se familiariza com o VS Code!*
+*Dica: Comece com um projeto simples usando Quarto e vá adicionando complexidade conforme se familiariza com o VS Code!*
