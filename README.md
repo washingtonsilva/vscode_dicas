@@ -1,6 +1,12 @@
 # VS Code - Dicas e Configurações
 
-Este repositório contém anotações para documentar minha transição para começar a usar o VS Code em meus projetos.
+E### 🔄 [Projetos R: Do RStudio para VS Code](projeto-r-vscode.md)
+Guia completo para replicar a experiência de projetos RStudio no VS Code, incluindo configurações, estrutura de pastas e workflow.
+
+### 🚀 [Workflows Práticos](workflows-praticos.md)
+Guias passo-a-passo para criar seu primeiro projeto, fazer análises completas e usar templates reutilizáveis.
+
+### ⚙️ [Configurações](configuracoes.md)repositório contém anotações para documentar minha transição para começar a usar o VS Code em meus projetos.
 
 ## Objetivo
 
@@ -16,6 +22,7 @@ Documentar como acessar, editar e manter os arquivos de configuração do VS Cod
 ├── atalhos-macos.md         # Atalhos do VS Code para macOS
 ├── analise-atalhos.md       # Análise detalhada dos atalhos personalizados
 ├── projeto-r-vscode.md      # Guia: Do RStudio para VS Code
+├── workflows-praticos.md    # Workflows passo-a-passo para primeiros projetos
 ├── configuracoes.md         # Anotações sobre configurações do VS Code
 └── versoes_atuais/          # Versões atuais dos arquivos de configuração
     ├── settings.json        # Configurações gerais do VS Code
