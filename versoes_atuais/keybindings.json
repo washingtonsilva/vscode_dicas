@@ -1,0 +1,146 @@
+[
+  // ==================== ATALHOS PARA R ====================
+
+  {
+    "description": "Executar linha ou seleção (R)",
+    "key": "ctrl+enter",
+    "command": "r.runSelection",
+    "when": "editorLangId == r"
+  },
+  {
+    "description": "Executar chunk atual (R)",
+    "key": "ctrl+shift+enter",
+    "command": "r.runCurrentChunk",
+    "when": "editorLangId == r"
+  },
+  {
+    "description": "Operador Pipe nativo (|>) — R",
+    "key": "ctrl+shift+m",
+    "command": "type",
+    "args": { "text": " |> " },
+    "when": "editorLangId == r"
+  },
+  {
+    "description": "Operador Pipe nativo (|>) — Quarto",
+    "key": "ctrl+shift+m",
+    "command": "type",
+    "args": { "text": " |> " },
+    "when": "editorLangId == quarto"
+  },
+  {
+    "description": "Operador de atribuição (<-) — R",
+    "key": "alt+-",
+    "command": "type",
+    "args": { "text": " <- " },
+    "when": "editorLangId == r"
+  },
+  {
+    "description": "Operador de atribuição (<-) — Quarto",
+    "key": "alt+-",
+    "command": "type",
+    "args": { "text": " <- " },
+    "when": "editorLangId == quarto"
+  },
+  {
+    "description": "Limpar console R",
+    "key": "ctrl+l",
+    "command": "r.clearTerminal",
+    "when": "editorLangId == r"
+  },
+
+  // ==================== ATALHOS PARA QUARTO ====================
+
+  {
+    "description": "Renderizar Quarto",
+    "key": "ctrl+shift+k",
+    "command": "quarto.render",
+    "when": "editorLangId == quarto"
+  },
+  {
+    "description": "Preview Quarto",
+    "key": "ctrl+shift+p",
+    "command": "quarto.preview",
+    "when": "editorLangId == quarto"
+  },
+  {
+    "description": "Executar chunk atual (Quarto)",
+    "key": "ctrl+shift+enter",
+    "command": "quarto.runCurrentCell",
+    "when": "editorLangId == quarto"
+  },
+  {
+    "description": "Executar seleção (Quarto)",
+    "key": "ctrl+enter",
+    "command": "quarto.runSelection",
+    "when": "editorLangId == quarto"
+  },
+  {
+    "description": "Inserir chunk R",
+    "key": "ctrl+alt+i",
+    "command": "editor.action.insertSnippet",
+    "when": "editorLangId == quarto",
+    "args": {
+      "snippet": "```{r}\n$0\n```"
+    }
+  },
+  {
+    "description": "Inserir chunk Python",
+    "key": "ctrl+alt+p",
+    "command": "editor.action.insertSnippet",
+    "when": "editorLangId == quarto",
+    "args": {
+      "snippet": "```{python}\n$0\n```"
+    }
+  },
+
+  // ==================== ATALHOS PARA PYTHON ====================
+
+  {
+    "description": "Executar seleção (Python)",
+    "key": "ctrl+enter",
+    "command": "python.execSelectionInTerminal",
+    "when": "editorLangId == python"
+  },
+
+  // ==================== ATALHOS PARA LATEX ====================
+
+  {
+    "description": "Compilar LaTeX",
+    "key": "ctrl+alt+b",
+    "command": "latex-workshop.build",
+    "when": "editorLangId == latex"
+  },
+
+  // ==================== PRODUTIVIDADE GERAL ====================
+
+  {
+    "description": "Alternar quebra de linha",
+    "key": "alt+z",
+    "command": "editor.action.toggleWordWrap"
+  },
+  {
+    "description": "Duplicar linha",
+    "key": "ctrl+shift+d",
+    "command": "editor.action.duplicateSelection"
+  },
+  {
+    "description": "Comentar/descomentar",
+    "key": "ctrl+shift+c",
+    "command": "editor.action.commentLine"
+  },
+  {
+    "description": "Focar primeiro painel",
+    "key": "ctrl+1",
+    "command": "workbench.action.focusFirstEditorGroup"
+  },
+  {
+    "description": "Focar segundo painel",
+    "key": "ctrl+2",
+    "command": "workbench.action.focusSecondEditorGroup"
+  },
+  {
+    "description": "Alternar terminal",
+    "key": "ctrl+`",
+    "command": "workbench.action.terminal.toggleTerminal"
+  }
+]

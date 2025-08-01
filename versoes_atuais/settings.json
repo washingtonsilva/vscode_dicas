@@ -1,0 +1,47 @@
+{
+  // Sugestões inline no editor
+  "editor.inlineSuggest.enabled": true,
+
+  // Execução de seleção no editor interativo do Jupyter
+  "jupyter.interactiveWindow.textEditor.executeSelection": true,
+
+  // Configurações do GitHub Copilot
+  "github.copilot.enable": {
+    "quarto": false,
+    "*": true
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
+
+  // Configurações do R
+  "r.plot.useHttpgd": true,
+  "r.session.levelOfObjectDetail": "Detailed",
+  "r.rpath.mac": "/Library/Frameworks/R.framework/Versions/4.5.1/Resources/bin",
+
+  // Configurações do Python
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+
+  // Configurações do Git
+  "git.autofetch": true,
+
+  // Aparência do editor
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.colorTheme": "Tomorrow Night Blue",
+
+  // Coloração de pares de colchetes
+  "editor.bracketPairColorization.enabled": true,
+
+  // Associações de arquivos
+  "workbench.editorAssociations": {
+    "file:/**/*.csv": "jupyter-data-wrangler"
+  },
+
+  // Comando ignorado no terminal integrado (Julia)
+  "terminal.integrated.commandsToSkipShell": [
+    "language-julia.interrupt"
+  ],
+
+  // Julia
+  "julia.symbolCacheDownload": true,
+  "julia.enableTelemetry": true
+}
