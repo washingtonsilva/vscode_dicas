@@ -2,7 +2,7 @@
 
 Este documento contém os principais atalhos de teclado do VS Code otimizados para macOS (MacBook Air M1).
 
-## 🔍 Navegação e Busca
+## Navegação e Busca
 
 | Ação | Atalho | Descrição |
 |------|--------|-----------|
@@ -13,7 +13,7 @@ Este documento contém os principais atalhos de teclado do VS Code otimizados pa
 | **Ir para linha** | `⌃ + G` | Navegar para linha específica |
 | **Ir para símbolo** | `⌘ + ⇧ + O` | Navegar para função/classe |
 
-## 📁 Gerenciamento de Arquivos
+## Gerenciamento de Arquivos
 
 | Ação | Atalho | Descrição |
 |------|--------|-----------|
@@ -24,7 +24,7 @@ Este documento contém os principais atalhos de teclado do VS Code otimizados pa
 | **Fechar aba** | `⌘ + W` | Fechar aba atual |
 | **Reabrir aba fechada** | `⌘ + ⇧ + T` | Reabrir última aba fechada |
 
-## ✏️ Edição de Código
+## Edição de Código
 
 | Ação | Atalho | Descrição |
 |------|--------|-----------|
@@ -37,7 +37,7 @@ Este documento contém os principais atalhos de teclado do VS Code otimizados pa
 | **Inserir linha abaixo** | `⌘ + ⏎` | Nova linha abaixo |
 | **Inserir linha acima** | `⌘ + ⇧ + ⏎` | Nova linha acima |
 
-## 🎯 Seleção e Multi-cursor
+## Seleção e Multi-cursor
 
 | Ação | Atalho | Descrição |
 |------|--------|-----------|
@@ -48,7 +48,7 @@ Este documento contém os principais atalhos de teclado do VS Code otimizados pa
 | **Expandir seleção** | `⌃ + ⇧ + →` | Expandir seleção para palavra |
 | **Selecionar linha inteira** | `⌘ + L` | Selecionar linha completa |
 
-## 🗂 Navegação entre Abas e Painéis
+## Navegação entre Abas e Painéis
 
 | Ação | Atalho | Descrição |
 |------|--------|-----------|
@@ -58,7 +58,7 @@ Este documento contém os principais atalhos de teclado do VS Code otimizados pa
 | **Dividir editor** | `⌘ + \\` | Dividir editor verticalmente |
 | **Alternar entre grupos** | `⌘ + 1/2/3` | Focar em grupo de editor |
 
-## 🔧 Terminal e Debug
+## Terminal e Debug
 
 | Ação | Atalho | Descrição |
 |------|--------|-----------|
@@ -68,7 +68,7 @@ Este documento contém os principais atalhos de teclado do VS Code otimizados pa
 | **Toggle panel** | `⌘ + J` | Mostrar/ocultar painel inferior |
 | **Command Palette** | `⌘ + ⇧ + P` | Palette de comandos |
 
-## 🎨 Formatação e Comentários
+## Formatação e Comentários
 
 | Ação | Atalho | Descrição |
 |------|--------|-----------|
@@ -79,7 +79,7 @@ Este documento contém os principais atalhos de teclado do VS Code otimizados pa
 | **Indentar** | `⌘ + ]` | Aumentar indentação |
 | **Des-indentar** | `⌘ + [` | Diminuir indentação |
 
-## 💡 Dicas Específicas para macOS
+## Dicas Específicas para macOS
 
 ### Símbolos do Teclado macOS:
 - `⌘` = Command (cmd)
@@ -96,7 +96,7 @@ Este documento contém os principais atalhos de teclado do VS Code otimizados pa
 
 ---
 
-## 📚 Recursos Adicionais
+## Recursos Adicionais
 
 - **Personalizar atalhos**: `⌘ + K ⌘ + S` abre o editor de atalhos
 - **Arquivo de configuração**: Atalhos customizados ficam em `keybindings.json`
