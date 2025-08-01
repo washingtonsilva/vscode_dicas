@@ -12,6 +12,7 @@ Documentar como acessar, editar e manter os arquivos de configuração do VS Cod
 
 ```
 ├── README.md                # Este arquivo
+├── visao-geral-vscode.md    # Visão geral didática do VS Code
 ├── atalhos-macos.md         # Atalhos do VS Code para macOS
 ├── projeto-r-vscode.md      # Guia: Do RStudio para VS Code
 ├── configuracoes.md         # Anotações sobre configurações do VS Code
@@ -21,6 +22,9 @@ Documentar como acessar, editar e manter os arquivos de configuração do VS Cod
 ```
 
 ## Conteúdo
+
+### 🎯 [Visão Geral do VS Code](visao-geral-vscode.md)
+Introdução didática e completa ao VS Code 1.102.3, arquitetura, conceitos fundamentais e comparação com RStudio.
 
 ### 📋 [Atalhos para macOS](atalhos-macos.md)
 Principais atalhos de teclado do VS Code otimizados para MacBook Air M1, organizados por categoria.
